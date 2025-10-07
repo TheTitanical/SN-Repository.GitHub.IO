@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Splash! Express</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f9ff;
+      color: #333;
+    }
+
+    header {
+      background: #0099cc;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80') 
+        no-repeat center center/cover;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 3em;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .content {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .content h3 {
+      color: #0099cc;
+      font-size: 2em;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .rides-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .ride {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .ride:hover {
+      transform: scale(1.03);
+    }
+
+    .ride h4 {
+      margin-bottom: 10px;
+      color: #0077aa;
+    }
+
+    .ride p {
+      font-size: 0.95em;
+      line-height: 1.4;
+    }
+
+    footer {
+      background: #0099cc;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Splash! Express</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#rides">Rides</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Your Ultimate Water Adventure Awaits!</h2>
+  </section>
+
+  <section class="content" id="rides">
+    <h3>Our Rides</h3>
+    <div class="rides-list">
+      <div class="ride">
+        <h4>1. The Tsunami Drop</h4>
+        <p>A towering plunge that sends you racing down at lightning speed before splashing into cool waters.</p>
+      </div>
+      <div class="ride">
+        <h4>2. Aqua Vortex</h4>
+        <p>Swirl through a massive funnel of rushing water that twists and spins you before the final splashdown.</p>
+      </div>
+      <div class="ride">
+        <h4>3. Lazy Lagoon</h4>
+        <p>Relax as you float along a gentle, winding river surrounded by tropical scenery.</p>
+      </div>
+      <div class="ride">
+        <h4>4. Rapid River Rapids</h4>
+        <p>Hold on tight through waves, splashes, and sudden turns in this thrilling rapid ride.</p>
+      </div>
+      <div class="ride">
+        <h4>5. Wave Rider Pool</h4>
+        <p>Catch giant waves and enjoy the beach vibe right in the heart of the park.</p>
+      </div>
+      <div class="ride">
+        <h4>6. Tropical Twister</h4>
+        <p>Spin around sharp twists and turns before plunging into a cool splash zone.</p>
+      </div>
+      <div class="ride">
+        <h4>7. Splash Mountain Slide</h4>
+        <p>A classic slide adventure packed with speed, drops, and plenty of water spray.</p>
+      </div>
+      <div class="ride">
+        <h4>8. Kids’ Adventure Bay</h4>
+        <p>A safe and fun water play zone for the little ones, with mini slides and splash pads.</p>
+      </div>
+      <div class="ride">
+        <h4>9. Hydro Racer</h4>
+        <p>Compete with friends on multi-lane slides to see who can race to the bottom the fastest.</p>
+      </div>
+      <div class="ride">
+        <h4>10. Sunset Soaker</h4>
+        <p>End the day with a scenic ride filled with water sprays and a relaxing sunset backdrop.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Splash! Express | All Rights Reserved</p>
+  </footer>
+</body>
+</html>
