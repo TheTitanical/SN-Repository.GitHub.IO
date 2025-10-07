@@ -1,175 +1,200 @@
-// Create and append the <head> elements
-document.title = "Splash! Express";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Splash! Express</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f9ff;
+      color: #333;
+    }
 
-// Create <style> with all CSS
-const style = document.createElement("style");
-style.textContent = `
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f0f9ff;
-    color: #333;
-  }
+    header {
+      background: #0099cc;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
 
-  header {
-    background: #0099cc;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-  }
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
 
-  header h1 {
-    margin: 0;
-    font-size: 2.5em;
-  }
+    nav {
+      margin-top: 10px;
+    }
 
-  nav {
-    margin-top: 10px;
-  }
+    nav button {
+      margin: 0 15px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+      text-decoration: none;
+      transition: text-decoration 0.2s ease;
+    }
 
-  nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-  }
+    nav button:hover {
+      text-decoration: underline;
+    }
 
-  nav a:hover {
-    text-decoration: underline;
-  }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80') 
+        no-repeat center center/cover;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
 
-  .hero {
-    background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1350&q=80') 
-      no-repeat center center/cover;
-    height: 50vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    text-align: center;
-  }
+    .hero h2 {
+      font-size: 3em;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
 
-  .hero h2 {
-    font-size: 3em;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    border-radius: 10px;
-  }
+    .content {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
 
-  .content {
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: auto;
-  }
+    .content h3 {
+      color: #0099cc;
+      font-size: 2em;
+      margin-bottom: 15px;
+      text-align: center;
+    }
 
-  .content h3 {
-    color: #0099cc;
-    font-size: 2em;
-    margin-bottom: 15px;
-    text-align: center;
-  }
+    .rides-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
 
-  .rides-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-  }
+    .ride {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
 
-  .ride {
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease;
-  }
+    .ride:hover {
+      transform: scale(1.03);
+    }
 
-  .ride:hover {
-    transform: scale(1.03);
-  }
+    .ride h4 {
+      margin-bottom: 10px;
+      color: #0077aa;
+    }
 
-  .ride h4 {
-    margin-bottom: 10px;
-    color: #0077aa;
-  }
+    .ride p {
+      font-size: 0.95em;
+      line-height: 1.4;
+    }
 
-  .ride p {
-    font-size: 0.95em;
-    line-height: 1.4;
-  }
+    footer {
+      background: #0099cc;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Splash! Express</h1>
+    <nav>
+      <button onclick="goHome()">Home</button>
+      <button onclick="goRides()">Rides</button>
+      <button onclick="goAbout()">About</button>
+      <button onclick="goContact()">Contact</button>
+    </nav>
+  </header>
 
-  footer {
-    background: #0099cc;
-    color: #fff;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 40px;
-  }
-`;
-document.head.appendChild(style);
+  <section class="hero" id="hero">
+    <h2>Your Ultimate Water Adventure Awaits!</h2>
+  </section>
 
-// Create <header>
-const header = document.createElement("header");
-const title = document.createElement("h1");
-title.textContent = "Splash! Express";
-const nav = document.createElement("nav");
-["Home", "Rides", "About", "Contact"].forEach((text, i) => {
-  const a = document.createElement("a");
-  a.href = i === 1 ? "#rides" : "#";
-  a.textContent = text;
-  nav.appendChild(a);
-});
-header.append(title, nav);
+  <section class="content" id="rides">
+    <h3>Our Rides</h3>
+    <div class="rides-list">
+      <div class="ride">
+        <h4>1. The Tsunami Drop</h4>
+        <p>A towering plunge that sends you racing down at lightning speed before splashing into cool waters.</p>
+      </div>
+      <div class="ride">
+        <h4>2. Aqua Vortex</h4>
+        <p>Swirl through a massive funnel of rushing water that twists and spins you before the final splashdown.</p>
+      </div>
+      <div class="ride">
+        <h4>3. Lazy Lagoon</h4>
+        <p>Relax as you float along a gentle, winding river surrounded by tropical scenery.</p>
+      </div>
+      <div class="ride">
+        <h4>4. Rapid River Rapids</h4>
+        <p>Hold on tight through waves, splashes, and sudden turns in this thrilling rapid ride.</p>
+      </div>
+      <div class="ride">
+        <h4>5. Wave Rider Pool</h4>
+        <p>Catch giant waves and enjoy the beach vibe right in the heart of the park.</p>
+      </div>
+      <div class="ride">
+        <h4>6. Tropical Twister</h4>
+        <p>Spin around sharp twists and turns before plunging into a cool splash zone.</p>
+      </div>
+      <div class="ride">
+        <h4>7. Splash Mountain Slide</h4>
+        <p>A classic slide adventure packed with speed, drops, and plenty of water spray.</p>
+      </div>
+      <div class="ride">
+        <h4>8. Kids’ Adventure Bay</h4>
+        <p>A safe and fun water play zone for the little ones, with mini slides and splash pads.</p>
+      </div>
+      <div class="ride">
+        <h4>9. Hydro Racer</h4>
+        <p>Compete with friends on multi-lane slides to see who can race to the bottom the fastest.</p>
+      </div>
+      <div class="ride">
+        <h4>10. Sunset Soaker</h4>
+        <p>End the day with a scenic ride filled with water sprays and a relaxing sunset backdrop.</p>
+      </div>
+    </div>
+  </section>
 
-// Hero section
-const hero = document.createElement("section");
-hero.className = "hero";
-const heroHeading = document.createElement("h2");
-heroHeading.textContent = "Your Ultimate Water Adventure Awaits!";
-hero.appendChild(heroHeading);
+  <footer>
+    <p>&copy; 2025 Splash! Express | All Rights Reserved</p>
+  </footer>
 
-// Content section
-const content = document.createElement("section");
-content.className = "content";
-content.id = "rides";
-const contentTitle = document.createElement("h3");
-contentTitle.textContent = "Our Rides";
-content.appendChild(contentTitle);
+  <script>
+    function goHome() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-const ridesList = document.createElement("div");
-ridesList.className = "rides-list";
+    function goRides() {
+      document.getElementById('rides').scrollIntoView({ behavior: 'smooth' });
+    }
 
-const rides = [
-  { name: "The Tsunami Drop", desc: "A towering plunge that sends you racing down at lightning speed before splashing into cool waters." },
-  { name: "Aqua Vortex", desc: "Swirl through a massive funnel of rushing water that twists and spins you before the final splashdown." },
-  { name: "Lazy Lagoon", desc: "Relax as you float along a gentle, winding river surrounded by tropical scenery." },
-  { name: "Rapid River Rapids", desc: "Hold on tight through waves, splashes, and sudden turns in this thrilling rapid ride." },
-  { name: "Wave Rider Pool", desc: "Catch giant waves and enjoy the beach vibe right in the heart of the park." },
-  { name: "Tropical Twister", desc: "Spin around sharp twists and turns before plunging into a cool splash zone." },
-  { name: "Splash Mountain Slide", desc: "A classic slide adventure packed with speed, drops, and plenty of water spray." },
-  { name: "Kids’ Adventure Bay", desc: "A safe and fun water play zone for the little ones, with mini slides and splash pads." },
-  { name: "Hydro Racer", desc: "Compete with friends on multi-lane slides to see who can race to the bottom the fastest." },
-  { name: "Sunset Soaker", desc: "End the day with a scenic ride filled with water sprays and a relaxing sunset backdrop." }
-];
+    function goAbout() {
+      alert("About Splash! Express:\nYour destination for fun, thrills, and unforgettable water adventures!");
+    }
 
-// Generate each ride card
-rides.forEach((ride, index) => {
-  const card = document.createElement("div");
-  card.className = "ride";
-  const title = document.createElement("h4");
-  title.textContent = `${index + 1}. ${ride.name}`;
-  const desc = document.createElement("p");
-  desc.textContent = ride.desc;
-  card.append(title, desc);
-  ridesList.appendChild(card);
-});
-
-content.appendChild(ridesList);
-
-// Footer
-const footer = document.createElement("footer");
-footer.innerHTML = `<p>&copy; 2025 Splash! Express | All Rights Reserved</p>`;
-
-// Append all to body
-document.body.append(header, hero, content, footer);
+    function goContact() {
+      alert("Contact us at:\n📧 info@splashexpress.com\n📞 (555) 123-4567");
+    }
+  </script>
+</body>
+</html>
