@@ -29,14 +29,19 @@
       margin-top: 10px;
     }
 
-    nav a {
+    nav button {
       margin: 0 15px;
-      text-decoration: none;
+      background: none;
+      border: none;
       color: #fff;
       font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+      text-decoration: none;
+      transition: text-decoration 0.2s ease;
     }
 
-    nav a:hover {
+    nav button:hover {
       text-decoration: underline;
     }
 
@@ -113,14 +118,14 @@
   <header>
     <h1>Splash! Express</h1>
     <nav>
-      <a href="#">Home</a>
-      <a href="#rides">Rides</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+      <button onclick="goHome()">Home</button>
+      <button onclick="goRides()">Rides</button>
+      <button onclick="goAbout()">About</button>
+      <button onclick="goContact()">Contact</button>
     </nav>
   </header>
 
-  <section class="hero">
+  <section class="hero" id="hero">
     <h2>Your Ultimate Water Adventure Awaits!</h2>
   </section>
 
@@ -173,5 +178,23 @@
   <footer>
     <p>&copy; 2025 Splash! Express | All Rights Reserved</p>
   </footer>
+
+  <script>
+    function goHome() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goRides() {
+      document.getElementById('rides').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function goAbout() {
+      alert("About Splash! Express:\nYour destination for fun, thrills, and unforgettable water adventures!");
+    }
+
+    function goContact() {
+      alert("Contact us at:\n📧 info@splashexpress.com\n📞 (555) 123-4567");
+    }
+  </script>
 </body>
 </html>
