@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Splash! Express</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f9ff;
+      color: #333;
+    }
+
+    header {
+      background: #0099cc;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav button {
+      margin: 0 15px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+      text-decoration: none;
+      transition: text-decoration 0.2s ease;
+    }
+
+    nav button:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=1350&q=80')
+        no-repeat center center/cover;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 3em;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .content {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .content h3 {
+      color: #0099cc;
+      font-size: 2em;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .content p {
+      font-size: 1em;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    footer {
+      background: #0099cc;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About Splash! Express</h1>
+    <nav>
+      <button onclick="goHome()">Home</button>
+      <button onclick="goRides()">Rides</button>
+      <button onclick="goAbout()">About</button>
+      <button onclick="goContact()">Contact</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Dive Into Our Story!</h2>
+  </section>
+
+  <section class="content" id="about">
+    <h3>Who We Are</h3>
+    <p>
+      Splash! Express is your ultimate destination for aquatic excitement and family fun!  
+      From thrilling slides to relaxing rivers, we bring together unforgettable water adventures 
+      designed for guests of all ages. Our park combines adrenaline, laughter, and comfort in one 
+      spectacular experience.
+    </p>
+
+    <h3>Our Mission</h3>
+    <p>
+      We aim to create a safe, exciting, and eco-friendly environment where every visitor can 
+      make lasting memories. With our dedication to cleanliness, innovation, and guest happiness, 
+      Splash! Express continues to make a splash in the world of water parks!
+    </p>
+
+    <h3>Our Vision</h3>
+    <p>
+      To be Australia’s most loved and refreshing water adventure park — inspiring joy, laughter, 
+      and a lifelong love for aquatic fun.
+    </p>
+
+    <div style="text-align: center; margin-top: 30px;">
+      <button onclick="goBackHome()" 
+              style="background:#0099cc;color:#fff;border:none;padding:12px 25px;border-radius:8px;
+                     font-weight:bold;cursor:pointer;transition:background 0.3s ease;">
+        ← Back to Home
+      </button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Splash! Express | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function goHome() {
+      window.location.href = "index.html";
+    }
+
+    function goRides() {
+      window.location.href = "index.html#rides";
+    }
+
+    function goAbout() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goContact() {
+      alert("Contact us at:\n📧 info@splashexpress.com\n📞 (555) 123-4567");
+    }
+
+    function goBackHome() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
