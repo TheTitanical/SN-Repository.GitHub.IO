@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Splash! Express</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f9ff;
+      color: #333;
+    }
+
+    header {
+      background: #0099cc;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav button {
+      margin: 0 15px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+      text-decoration: none;
+      transition: text-decoration 0.2s ease;
+    }
+
+    nav button:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=1350&q=80')
+        no-repeat center center/cover;
+      height: 50vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 3em;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .content {
+      padding: 40px 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .content h3 {
+      color: #0099cc;
+      font-size: 2em;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+      resize: none;
+    }
+
+    textarea {
+      height: 120px;
+    }
+
+    button.submit-btn {
+      background: #0099cc;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button.submit-btn:hover {
+      background: #0077aa;
+    }
+
+    footer {
+      background: #0099cc;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+    <nav>
+      <button onclick="goHome()">Home</button>
+      <button onclick="goRides()">Rides</button>
+      <button onclick="goAbout()">About</button>
+      <button onclick="goContact()">Contact</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>We’d Love to Hear From You!</h2>
+  </section>
+
+  <section class="content" id="contact">
+    <h3>Get In Touch</h3>
+    <p style="text-align:center;">
+      Have questions, feedback, or group booking inquiries?  
+      Fill out the form below or reach us directly — our team will get back to you soon!
+    </p>
+
+    <form onsubmit="submitForm(event)">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+
+    <div style="text-align:center; margin-top: 30px;">
+      <p><strong>📧 Email:</strong> info@splashexpress.com</p>
+      <p><strong>📞 Phone:</strong> (555) 123-4567</p>
+      <p><strong>📍 Address:</strong> 25 Waterway Blvd, Gold Coast, QLD</p>
+    </div>
+
+    <div style="text-align:center; margin-top: 30px;">
+      <button onclick="goBackHome()" 
+              style="background:#0099cc;color:#fff;border:none;padding:12px 25px;border-radius:8px;
+                     font-weight:bold;cursor:pointer;transition:background 0.3s ease;">
+        ← Back to Home
+      </button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Splash! Express | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function goHome() {
+      window.location.href = "index.html";
+    }
+
+    function goRides() {
+      window.location.href = "index.html#rides";
+    }
+
+    function goAbout() {
+      window.location.href = "about.html";
+    }
+
+    function goContact() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goBackHome() {
+      window.location.href = "index.html";
+    }
+
+    function submitForm(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+      if (name && email && message) {
+        alert(`Thank you, ${name}! Your message has been sent successfully.`);
+        document.querySelector("form").reset();
+      } else {
+        alert("Please fill out all fields before submitting.");
+      }
+    }
+  </script>
+</body>
+</html>
