@@ -96,10 +96,10 @@
   <header>
     <h1>About Splash! Express</h1>
     <nav>
-      <button onclick="goHome()">Home</button>
+      <button id="goJavanaBtn">View Homepage</button>
       <button onclick="goRides()">Rides</button>
       <button onclick="goAbout()">About</button>
-      <button onclick="goContact()">Contact</button>
+      <button id="goContactBtn">View Contact Page</button>
     </nav>
   </header>
 
@@ -162,6 +162,14 @@
     function goBackHome() {
       window.location.href = "index.html";
     }
+        // External navigation
+    document.getElementById("goJavanaBtn").addEventListener("click", () => {
+      window.location.href = "https://thetitanical.github.io/Javana.html";
+    });
+
+    document.getElementById("goContactBtn").addEventListener("click", () => {
+      window.location.href = "https://thetitanical.github.io/Contact.html";
+    });
   </script>
 </body>
 </html>
